@@ -41,7 +41,7 @@
         "schemaVersion": "2.0.0",
         "hasCpSettings": false,
         "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/craft3-randomm/randomm/master/CHANGELOG.md",
+        "changelogUrl": "https://raw.githubusercontent.com/sjelfull/craft3-randomm/master/CHANGELOG.md",
         "class": "superbig\\randomm\\Randomm"
     }
 }
