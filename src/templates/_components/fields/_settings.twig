@@ -1,0 +1,54 @@
+{#
+/**
+ * Randomm plugin for Craft CMS
+ *
+ *  Field Settings
+ *
+ * @author    Superbig
+ * @copyright Copyright (c) 2017 Superbig
+ * @link      https://superbig.co
+ * @package   Randomm
+ * @since     2.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("superbig\\randomm\\assetbundles\\field\\FieldAsset") %}
+
+{{ forms.selectField({
+    label: 'Random type',
+    instructions: 'Uses chance.js for generation',
+    id:     'type',
+    name:   'type',
+    options: types,
+    value:  field.type,
+}) }}
+
+{{ forms.editableTableField({
+    label: 'Type arguments',
+    instructions: 'Send the defined arguments object when running chance.js. See documentation at <a href="http://chancejs.com/">chancejs.com</a> for valid arguments for every type.',
+    id:     'typeArguments',
+    name:   'typeArguments',
+    cols: [
+        { 'heading' : 'Key', type: 'singleline' },
+        { 'heading' : 'Value', type: 'singleline' },
+    ],
+    rows: field.typeArguments
+}) }}
+
+{{ forms.textField({
+    label: 'Placeholder',
+    instructions: 'Sets the placeholder attribute',
+    id:     'placeholder',
+    name:   'placeholder',
+    value:  field.placeholder,
+}) }}
+
+{{ forms.lightswitchField({
+    label: 'Generate on load',
+    instructions: 'Auto-generate if field is empty',
+    id:     'autoGenerateIfEmpty',
+    name:   'autoGenerateIfEmpty',
+    on:  (field.autoGenerateIfEmpty is defined and field.autoGenerateIfEmpty) ? true : false,
+}) }}

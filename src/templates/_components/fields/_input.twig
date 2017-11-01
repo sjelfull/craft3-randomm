@@ -1,0 +1,39 @@
+{#
+/**
+ * Randomm plugin for Craft CMS 3.x
+ *
+ *  Field Input
+ *
+ * @author    Superbig
+ * @copyright Copyright (c) 2017 Superbig
+ * @link      https://superbig.co
+ * @package   Randomm
+ * @since     2.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% set config = {
+        id: name,
+        name: name,
+        value: value,
+        class: 'nicetext',
+        placeholder: field.placeholder,
+} %}
+
+{% set hasTypeArguments = field.typeArguments | length %}
+{% set arguments %}
+    {% spaceless %}
+        {% for argument in field.typeArguments %}
+            {% for attribute in argument %}"{{ attribute }}"{% if loop.first %}:{% endif %}{% endfor %}
+            {% if not loop.last %},{% endif %}
+        {% endfor %}
+    {% endspaceless %}
+{% endset %}
+
+{% set arguments = '{' ~ arguments | trim ~ '}' %}
+
+{{ forms.textField(config) }}
+<a id="{{ name }}-randomize" data-randomm-trigger="{{ namespacedId }}" data-randomm-type="{{ field.type }}"{% if hasTypeArguments %} data-randomm-arguments="{{arguments}}"{% endif %}{% if field.autoGenerateIfEmpty %} data-randomm-autogenerate{% endif %} class="randomm-trigger">Randomize!</a>
+

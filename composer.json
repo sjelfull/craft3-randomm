@@ -1,0 +1,47 @@
+{
+    "name": "superbig/craft3-randomm",
+    "description": "Fieldtype that allows you to create random things via chance.js",
+    "type": "craft-plugin",
+    "version": "2.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "randomm"
+    ],
+    "support": {
+        "docs": "https://github.com/sjelfull/craft3-randomm/blob/master/README.md",
+        "issues": "https://github.com/sjelfull/craft3-randomm/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Superbig",
+            "homepage": "https://superbig.co"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "~3.0.0-beta.23"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+          "superbig\\randomm\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Randomm",
+        "handle": "randomm",
+        "schemaVersion": "2.0.0",
+        "hasCpSettings": false,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/craft3-randomm/randomm/master/CHANGELOG.md",
+        "class": "superbig\\randomm\\Randomm"
+    }
+}
