@@ -2,7 +2,7 @@
     "name": "superbig/craft3-randomm",
     "description": "Fieldtype that allows you to create random things via chance.js",
     "type": "craft-plugin",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "keywords": [
         "craft",
         "cms",
